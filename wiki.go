@@ -12,7 +12,8 @@ type Page struct {
   Body []byte
 }
 
-var templates = template.Must(template.ParseFiles("edit.html", "view.html"))
+var templatePath = "templates/"
+var templates = template.Must(template.ParseFiles(templatePath + "edit.html", templatePath + "view.html"))
 var validPath = regexp.MustCompile("^/(edit|view|save)/([a-zA-Z0-9]+)$")
 
 func main() {
